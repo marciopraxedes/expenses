@@ -27,38 +27,36 @@ class _TransactionFormState extends State<TransactionForm> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Card(
-        elevation: 5,
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            children: [
-              TextField(
-                decoration: InputDecoration(labelText: 'Título'),
-                onSubmitted: (_) => _onSubmit(),
-                controller: titleController,
-              ),
-              TextField(
-                decoration: InputDecoration(labelText: 'Valor (R\$)'),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-                onSubmitted: (_) => _onSubmit(),
-                controller: valueController,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
-                    onPressed: _onSubmit,
-                    child: Text(
-                      'Nova transação',
-                      style: TextStyle(color: Colors.purple),
-                    ),
+    return Card(
+      elevation: 5,
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(labelText: 'Título'),
+              onSubmitted: (_) => _onSubmit(),
+              controller: titleController,
+            ),
+            TextField(
+              decoration: InputDecoration(labelText: 'Valor (R\$)'),
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              onSubmitted: (_) => _onSubmit(),
+              controller: valueController,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: _onSubmit,
+                  child: Text(
+                    'Nova transação',
+                    style: TextStyle(color: Colors.purple),
                   ),
-                ],
-              )
-            ],
-          ),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );
